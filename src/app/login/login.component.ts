@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../user/authentication.service';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { AbstractControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -18,6 +18,10 @@ export class LoginComponent implements OnInit {
       'password': ['', Validators.compose([Validators.required])]
     })
   }
+  get controls(): { [p: string]: AbstractControl } {
+    return this.form.controls;
+  }
+
   onSubmit(loginForm: any){
     this.formSubmitted = true;
     if (this.form.valid) {
