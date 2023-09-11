@@ -8,13 +8,21 @@
             <label for="username" class="form-label">Username:</label>
             <input type="text" class="form-control" formControlName="username" id="username"
              [ngClass]="{ 'is-invalid': formSubmitted && controls.username.invalid }">
-             <span id="passwordHelpInline" class="form-text" *ngIf="form.controls['password'].invalid" class="form-text text-muted">
+             <div *ngIf="formSubmitted && controls.username.invalid" class="invalid-feedback">
+              <span  id="username" class="form-text" *ngIf="controls.username.errors?.required" class="form-text text-muted">
+                Es requerido
+              </span>
+              <span  id="passwordHelpInline" class="form-text"  *ngIf="controls.username.errors?.username" class="form-text text-muted">
+                Ingresa los datos correctos
+              </span>
+          </div>
+             <span  id="passwordHelpInline" class="form-text" *ngIf="form.controls['password'].invalid" class="form-text text-muted">
               Ingresa los datos correctos
             </span>
           </div>
           <div class="mb- 3 form-group">
             <label for="Password" class="form-label">Password:</label>
-              <input type="password" id="Password" class="form-control" aria-describedby="passwordHelpInline"
+              <input type="password" id="Password" class="form-control" aria-describedby="passwordHelpInline" formControlName="password"
                 [ngClass]="{ 'is-invalid': formSubmitted && controls.password.invalid }">
             <div class="col-auto">
               <span id="passwordHelpInline" class="form-text" *ngIf="form.controls['password'].invalid" class="form-text text-muted">
