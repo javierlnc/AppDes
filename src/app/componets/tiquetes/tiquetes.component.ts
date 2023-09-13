@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./tiquetes.component.css']
 })
 export class TiquetesComponent {
+  destinos : String[] = ["caracoli", "bello","Medellin","Cualquiera","cualquiera dos"]
 
 }
