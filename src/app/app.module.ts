@@ -4,12 +4,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { NavbarComponent } from './componets/navbar/navbar.component'
+import { NavbarComponent } from './componets/navbar/navbar.component';
+import { TiquetesComponent } from './componets/tiquetes/tiquetes.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    TiquetesComponent
   ],
   imports: [
     BrowserModule,
