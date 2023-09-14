@@ -1,16 +1,16 @@
 <div class="container">
-  <form class="row g-2">
+  <form class="row g-2" #f="ngForm" (ngSubmit)="onSubmit(f.value)">
     <div class="col-12" >
-      <label for="inputEmail4" class="form-label">Documento</label>
-      <input type="email" class="form-control" id="inputEmail4">
+      <label for="inputDocument" class="form-label">Documento</label>
+      <input type="text" class="form-control" id="inputDocument">
     </div>
     <div class="col-12">
-      <label for="inputPassword4" class="form-label">Nombre</label>
-      <input type="password" class="form-control" id="inputPassword4">
+      <label for="inputNombre" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="inputNombre">
     </div>
     <div class="col-12">
-      <label for="inputAddress" class="form-label">Telefono</label>
-      <input type="text" class="form-control" id="inputAddress">
+      <label for="inputCelular" class="form-label">Celular</label>
+      <input type="tel" class="form-control" id="inputCelular">
     </div>
     <div class="col-md-6">
       <label for="inputAddress2" class="form-label">Origen</label>
