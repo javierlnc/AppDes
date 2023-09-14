@@ -1,42 +1,42 @@
 <div class="container">
-  <form class="row g-2" #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+  <form class="row g-2 form" #f="ngForm" (ngSubmit)="onSubmit(f.value)">
     <div class="col-12" >
       <label for="inputDocument" class="form-label">Documento</label>
-      <input type="text" class="form-control" id="inputDocument">
+      <input type="text" class="form-control" id="inputDocument" name="Documento" ngModel>
     </div>
     <div class="col-12">
       <label for="inputNombre" class="form-label">Nombre</label>
-      <input type="text" class="form-control" id="inputNombre">
+      <input type="text" class="form-control" id="inputNombre" name="Nombre" ngModel>
     </div>
     <div class="col-12">
       <label for="inputCelular" class="form-label">Celular</label>
-      <input type="tel" class="form-control" id="inputCelular">
+      <input type="tel" class="form-control" id="inputCelular" name="Celular" ngModel>
     </div>
     <div class="col-md-6">
-      <label for="inputAddress2" class="form-label">Origen</label>
-      <select id="inputState" class="form-select">
+      <label for="inputOrigen" class="form-label">Origen</label>
+      <select id="inputOrigen" class="form-select" name="Origen" ngMode>
         <option selected>Medellin</option>
-        <option *ngFor="let destino of destinos">{{destino}}</option>
+        <option *ngFor="let destino of destinos" >{{destino}}</option>
       </select>
     </div>
     <div class="col-md-6">
-      <label for="inputCity" class="form-label">Destino</label>
-      <select id="inputState" class="form-select">
-        <option selected>...</option>
-        <option *ngFor="let destino of destinos">{{destino}}</option>
+      <label for="inpuDestino" class="form-label">Destino</label>
+      <select id="inputDestino" class="form-select" name="Destino" ngMode>
+        <option selected >...</option>
+        <option *ngFor="let destino of destinos" name="Destino" ngMode>{{destino}}</option>
       </select>
     </div>
     <div class="col-md-2">
-      <label for="inputState" class="form-label">Vehiculo</label>
-      <input type="text" class="form-control" id="inputAddress">
+      <label for="inputVehiculo" class="form-label">Vehiculo</label>
+      <input type="text" class="form-control" id="inputVehiculo" name="Vehiculo" ngMode>
     </div>
     <div class="col-md-2">
-      <label for="inputZip" class="form-label">Silla</label>
-      <input type="text" class="form-control" id="inputZip">
+      <label for="inputSilla" class="form-label">Silla</label>
+      <input type="text" class="form-control" id="inpuSilla" name="Silla" ngMode>
     </div>
     <div class="col-12">
-      <label for="inputZip" class="form-label">Valor</label>
-      <input type="text" class="form-control" id="inputZip">
+      <label for="inputPrecio" class="form-label">Precio</label>
+      <input type="text" class="form-control" id="inputPrecio" name="Precio" ngMode>
     </div>
     <div class="col-12">
       <button type="submit" class="btn btn-primary">Vender</button>
