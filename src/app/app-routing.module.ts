@@ -6,7 +6,8 @@ const routes: Routes = [
     { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
     { path: 'user', loadChildren: () => import('./user/user.module').then(m => m.UserModule) },
     { path: 'login', loadChildren: () => import('./login/login.module').then(m => m.LoginModule) },
-    { path: 'tiquetes', loadChildren: () => import('./componets/tiquetes/tiquetes.module').then(m => m.TiquetesModule) }
+    { path: 'tiquetes', loadChildren: () => import('./componets/tiquetes/tiquetes.module').then(m => m.TiquetesModule) },
+    { path: 'envios', loadChildren: () => import('./componets/envios/envios.module').then(m => m.EnviosModule) }
     
 ];
 

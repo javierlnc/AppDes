@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { FormsModule }   from '@angular/forms'
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NavbarComponent } from './componets/navbar/navbar.component';
-import { TiquetesComponent } from './componets/tiquetes/tiquetes.component'
+import { TiquetesComponent } from './componets/tiquetes/tiquetes.component';
+import { EnviosComponent } from './componets/envios/envios.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    TiquetesComponent
+    TiquetesComponent,
+    EnviosComponent
   ],
   imports: [
     BrowserModule,
