@@ -11,10 +11,23 @@ export class EnviosComponent implements OnInit {
   destinos : String[] = ["caracoli", "bello","Medellin","Cualquiera","cualquiera dos"]
   constructor(bulder : FormBuilder){
     this.remitente = bulder.group({
-      'cedula':'',
-      'nombre':'',
-      'telefono':'',
-      'origen':''
+      'cedularRemitente':'',
+      'nombreRemitente':'',
+      'telefonoRemitente':'',
+      'origen':'',
+      'cedulaDestinatario':'',
+      'nombreDestinatario':'',
+      'telefonoDestinatario':'',
+      'destino':'',
+      'tipo':'',
+      'peso':'',
+      'medidaX':'',
+      'medidaY':'',
+      'medidaZ':'',
+      'contenido':'',
+      'valorDeclarado':'',
+      'seguro':'',
+      'flete':'',
     });
 
 

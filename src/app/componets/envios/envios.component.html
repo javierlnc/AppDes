@@ -1,26 +1,92 @@
-<h2>Destinatario</h2>
+<h2>Envios</h2>
 <form [formGroup]="remitente" (ngSubmit)="onSubmit(remitente.value)">
-    <div>
-        <label for="cedulaInput">Cedula</label>
-    <input type="text" class="form-control" id="cedulaInput" [formControl]="remitente.controls['cedula']">
+    <div class="containerF">
+        <div class="formRmitente">
+            <h3>Remitente:</h3>
+            <div class="input-group mb-2">
+                <label for="cedulaInput" class="input-group-text">Cedula</label>
+            <input type="text" class="form-control" id="cedulaInput" aria-describedby="basic-addon1" [formControl]="remitente.controls['cedulaRemitente']">
+            </div>
+            <div class="input-group mb-2">
+                <label for="nombreInput" class="input-group-text">Nombre remitente</label>
+            <input type="text" class="form-control" id="nombreInput" [formControl]="remitente.controls['nombreRemitente']">
+            </div>
+            <div class="input-group mb-2">
+                <label for="telefonoInput" class="input-group-text">Telefono</label>
+            <input type="text" class="form-control" id="telefonoInput" [formControl]="remitente.controls['telefonoRemitente']">
+            </div>
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="origenInput">origen</label>
+                </div>
+                <select id="origenInput" class="custom-select" name="origen" [formControl]="remitente.controls['origen']" >
+                    <option selected>...</option>
+                    <option *ngFor="let destino of destinos" id="origenInput" >{{destino}}</option>
+                </select>
+            </div>  
+           </div>
+           <div class="formDstinatario">
+            <h3>Destinatario:</h3>
+            <div class="input-group mb-2">
+                <label for="cedulaInput" class="input-group-text">Cedula</label>
+            <input type="text" class="form-control" id="cedulaInput" aria-describedby="basic-addon1" [formControl]="remitente.controls['cedulaDestinatario']">
+            </div>
+            <div class="input-group mb-2">
+                <label for="nombreInput" class="input-group-text">Nombre remitente</label>
+            <input type="text" class="form-control" id="nombreInput" [formControl]="remitente.controls['nombreDestinatario']">
+            </div>
+            <div class="input-group mb-2">
+                <label for="telefonoInput" class="input-group-text">Telefono</label>
+            <input type="text" class="form-control" id="telefonoInput" [formControl]="remitente.controls['telefonoDestinatario']">
+            </div>
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="origenInput">Destino</label>
+                </div>
+                <select id="origenInput" class="custom-select" name="origen" [formControl]="remitente.controls['destino']" >
+                    <option selected>...</option>
+                    <option *ngFor="let destino of destinos" id="origenInput" >{{destino}}</option>
+                </select>
+            </div>  
+           </div>
+           <div class="formDstinatario">
+            <h3>Encomienda</h3>
+            <div class="input-group mb-3">
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="origenInput">Tipo</label>
+                    </div>
+                    <select id="origenInput" class="custom-select" name="origen" [formControl]="remitente.controls['tipo']" >
+                        <option selected>...</option>
+                        <option *ngFor="let destino of destinos" id="origenInput" >{{destino}}</option>
+                    </select>
+                <span class="input-group-text">Peso</span>
+                <input type="text" class="form-control" aria-label="Server" [formControl]="remitente.controls['peso']">
+              </div>
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text">Medida X:</span>
+                <input type="text" class="form-control" aria-label="Username" [formControl]="remitente.controls['medidaX']">
+                <span class="input-group-text">Medida Y</span>
+                <input type="text" class="form-control" aria-label="Server" [formControl]="remitente.controls['medidaY']">
+                <span class="input-group-text">Medida Z</span>
+                <input type="text" class="form-control" aria-label="Server" [formControl]="remitente.controls['medidaZ']">
+              </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text">Dice contener: </span>
+                <textarea class="form-control" aria-label="With textarea" [formControl]="remitente.controls['contenido']"></textarea>
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text">Valor Declarado:</span>
+                <input type="text" class="form-control" aria-label="Username" [formControl]="remitente.controls['valorDeclarado']">
+                <span class="input-group-text">Seguro</span>
+                <input type="text" class="form-control" aria-label="Server" [formControl]="remitente.controls['seguro']">
+                <span class="input-group-text">Flete</span>
+                <input type="text" class="form-control" aria-label="Server" [formControl]="remitente.controls['flete']">
+              </div>
+           </div>
     </div>
-    <div>
-        <label for="nombreInput">Nombre remitente</label>
-    <input type="text" class="form-control" id="nombreInput" [formControl]="remitente.controls['nombre']">
-    </div>
-    <div>
-        <label for="telefonoInput">Telefono</label>
-    <input type="text" class="form-control" id="telefonoInput" [formControl]="remitente.controls['telefono']">
-    </div>
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <label class="input-group-text" for="origenInput">origen</label>
-        </div>
-        <select id="origenInput" class="custom-select" name="origen" [formControl]="remitente.controls['origen']" >
-            <option selected>...</option>
-            <option *ngFor="let destino of destinos" id="origenInput" >{{destino}}</option>
-        </select>
-    </div>  
+  
     <button type="submit" class="btn btn-primary">Submit</button>
 
 </form>
