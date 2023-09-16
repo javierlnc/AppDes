@@ -12,15 +12,15 @@
         <label for="telefonoInput">Telefono</label>
     <input type="text" class="form-control" id="telefonoInput" [formControl]="remitente.controls['telefono']">
     </div>
-    <div>
-        <label for="origenInput">origen</label>
-        <select id="inputDestino" class="form-select" name="Destino" [formControl]="remitente.controls['origen']" >
-            <option>...</option>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <label class="input-group-text" for="origenInput">origen</label>
+        </div>
+        <select id="origenInput" class="custom-select" name="origen" [formControl]="remitente.controls['origen']" >
+            <option selected>...</option>
             <option *ngFor="let destino of destinos" id="origenInput" >{{destino}}</option>
         </select>
-    </div>
-    
-    
+    </div>  
     <button type="submit" class="btn btn-primary">Submit</button>
 
 </form>

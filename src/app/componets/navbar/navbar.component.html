@@ -1,6 +1,11 @@
 <div class="d-flex" id="wrapper">
   <div class="bg-light border-right" id="sidebar-wrapper" [ngClass]="status ? 'hide' : 'show'">
-    <div class="sidebar-heading">Tiquetes </div>
+    <div class="sidebar-heading">
+      <a class="navbar-brand" [routerLink]="'home'">
+        <i class="bi bi-easel2-fill"></i>
+        Tiquetes
+      </a>
+    </div>
     <div class="list-group list-group-flush">
       <a [routerLink]="'home'" class="list-group-item list-group-item-action bg-light">Home</a>
       <a [routerLink]="'tiquetes'" class="list-group-item list-group-item-action bg-light">Tiquetes</a>

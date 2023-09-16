@@ -1,42 +1,39 @@
 <div class="container">
-  <form class="row g-2 form" #f="ngForm" (ngSubmit)="onSubmit(f.value)">
-    <div class="col-12" >
-      <label for="inputDocument" class="form-label">Documento</label>
-      <input type="text" class="form-control" id="inputDocument" name="Documento" ngModel>
+  <form class="row g-2 form" [formGroup]="tiquete" (ngSubmit)="onSubmit(tiquete.value)">
+    <div class="input-group flex-nowrap">
+      <span class="input-group-text" id="cedula">Cedula</span>
+      <input type="text" class="form-control" aria-label="Username" aria-describedby="addon-wrapping" [formControl]="tiquete.controls['cedula']">
     </div>
-    <div class="col-12">
-      <label for="inputNombre" class="form-label">Nombre</label>
-      <input type="text" class="form-control" id="inputNombre" name="Nombre" ngModel>
+    <div class="input-group flex-nowrap">
+      <span class="input-group-text" id="nombre">Nombre</span>
+      <input type="text" class="form-control" aria-label="Username" aria-describedby="addon-wrapping" [formControl]="tiquete.controls['nombre']">
     </div>
-    <div class="col-12">
-      <label for="inputCelular" class="form-label">Celular</label>
-      <input type="tel" class="form-control" id="inputCelular" name="Celular" ngModel>
+    <div class="input-group flex-nowrap">
+      <span class="input-group-text" id="celular">Celular</span>
+      <input type="text" class="form-control" aria-label="Username" aria-describedby="addon-wrapping" [formControl]="tiquete.controls['celular']">
     </div>
-    <div class="col-md-6">
-      <label for="inputOrigen" class="form-label">Origen</label>
-      <select id="inputOrigen" class="form-select" name="Origen" ngMode>
-        <option selected>Medellin</option>
+    <div class="input-group mb-3">
+      <label class="input-group-text" for="origenInput">Origen </label>
+      <select class="form-select" id="origenInput" [formControl]="tiquete.controls['origen']">
+        <option selected>...</option>
+        <option *ngFor="let destino of destinos" >{{destino}}</option>
+      </select>
+      <label class="input-group-text" for="destino">Destino </label>
+      <select class="form-select" id="destinoInput" [formControl]="tiquete.controls['destino']">
+        <option selected>...</option>
         <option *ngFor="let destino of destinos" >{{destino}}</option>
       </select>
     </div>
-    <div class="col-md-6">
-      <label for="inpuDestino" class="form-label">Destino</label>
-      <select id="inputDestino" class="form-select" name="Destino" ngMode>
-        <option selected >...</option>
-        <option *ngFor="let destino of destinos" name="Destino" ngMode>{{destino}}</option>
-      </select>
+    <div class="input-group mb-3">
+      <span class="input-group-text">Vehiculo</span>
+      <input type="text" class="form-control" aria-label="Username" [formControl]="tiquete.controls['vehiculo']">
+      <span class="input-group-text">Silla</span>
+      <input type="text" class="form-control" aria-label="Server" [formControl]="tiquete.controls['silla']">
     </div>
-    <div class="col-md-2">
-      <label for="inputVehiculo" class="form-label">Vehiculo</label>
-      <input type="text" class="form-control" id="inputVehiculo" name="Vehiculo" ngMode>
-    </div>
-    <div class="col-md-2">
-      <label for="inputSilla" class="form-label">Silla</label>
-      <input type="text" class="form-control" id="inpuSilla" name="Silla" ngMode>
-    </div>
-    <div class="col-12">
-      <label for="inputPrecio" class="form-label">Precio</label>
-      <input type="text" class="form-control" id="inputPrecio" name="Precio" ngMode>
+    <div class="input-group mb-3">
+      <span class="input-group-text">Precio</span>
+      <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" [formControl]="tiquete.controls['precio']">
+      <span class="input-group-text">.00</span>
     </div>
     <div class="col-12">
       <button type="submit" class="btn btn-primary">Vender</button>
