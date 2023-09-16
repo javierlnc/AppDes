@@ -1,4 +1,26 @@
 <h2>Destinatario</h2>
-<form>
+<form [formGroup]="remitente" (ngSubmit)="onSubmit(remitente.value)">
+    <div>
+        <label for="cedulaInput">Cedula</label>
+    <input type="text" class="form-control" id="cedulaInput" [formControl]="remitente.controls['cedula']">
+    </div>
+    <div>
+        <label for="nombreInput">Nombre remitente</label>
+    <input type="text" class="form-control" id="nombreInput" [formControl]="remitente.controls['nombre']">
+    </div>
+    <div>
+        <label for="telefonoInput">Telefono</label>
+    <input type="text" class="form-control" id="telefonoInput" [formControl]="remitente.controls['telefono']">
+    </div>
+    <div>
+        <label for="origenInput">origen</label>
+        <select id="inputDestino" class="form-select" name="Destino" [formControl]="remitente.controls['origen']" >
+            <option>...</option>
+            <option *ngFor="let destino of destinos" id="origenInput" >{{destino}}</option>
+        </select>
+    </div>
+    
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
 
 </form>

@@ -8,6 +8,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NavbarComponent } from './componets/navbar/navbar.component';
 import { TiquetesComponent } from './componets/tiquetes/tiquetes.component';
 import { EnviosComponent } from './componets/envios/envios.component'
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import { EnviosComponent } from './componets/envios/envios.component'
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { EnviosComponent } from './envios.component';
 
 
+
 export const routes: Routes = [
   { path: '', component: EnviosComponent }
 ];
@@ -12,7 +13,7 @@ export const routes: Routes = [
   declarations: [],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
   ]
 })
 export class EnviosModule { }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Form, FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup} from '@angular/forms';
+
 @Component({
   selector: 'envios',
   templateUrl: './envios.component.html',
@@ -7,16 +8,21 @@ import { Form, FormBuilder, FormGroup } from '@angular/forms';
 })
 export class EnviosComponent implements OnInit {
   remitente: FormGroup;
+  destinos : String[] = ["caracoli", "bello","Medellin","Cualquiera","cualquiera dos"]
   constructor(bulder : FormBuilder){
     this.remitente = bulder.group({
-
+      'cedula':'',
+      'nombre':'',
+      'telefono':'',
+      'origen':''
     });
+
 
   }
   ngOnInit(): void {
   }
-  onSubmit(form: any) : void{
-    console.log("enviando el siguiente tiquete", form)
+  onSubmit(value: String) : void{
+    console.log("enviando el siguiente tiquete", value)
 
   }
 
